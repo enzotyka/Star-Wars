@@ -38,7 +38,8 @@ function renderCharacters() {
 
     charactersToShow.forEach((character) => {
         const card = document.createElement("div");
-        card.style.backgroundImage = `url('${character.image}')`;
+        const imageUrl = character.image || 'assets/img/default-image.jpg';
+        card.style.backgroundImage = `url('${imageUrl}')`;
         card.className = "cards";
 
         const characterNameBG = document.createElement("div");
@@ -109,7 +110,8 @@ function showModal(character) {
     modalContent.innerHTML = '';
 
     const characterImage = document.createElement("div");
-    characterImage.style.backgroundImage = `url('${character.image}')`;
+    const imageUrl = character.image || 'assets/img/default-image.jpg';
+    characterImage.style.backgroundImage = `url('${imageUrl}')`;
     characterImage.className = "character-image";
 
     const name = document.createElement("span");
